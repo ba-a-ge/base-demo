@@ -15,6 +15,7 @@
     <groupId>com.yuanqing</groupId>
     <artifactId>base-demo</artifactId>
     <version>1.0</version>
+    <packaging>pom</packaging>
 
 
     <modules>

@@ -33,7 +33,7 @@ public class UserUtilsTest {
 
     @Test
     public void test2() {
-        int i = 4;
+        int i = 5;
         String a = "A", b = "B", c = "C";
         hanio(i, a, b, c);
     }
