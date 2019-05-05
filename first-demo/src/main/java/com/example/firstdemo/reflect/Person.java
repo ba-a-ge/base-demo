@@ -3,6 +3,7 @@ package com.example.firstdemo.reflect;
 public class Person {
     String name;
     private int age;
+    public boolean sex;
 
     public String getName() {
         return name;
@@ -20,16 +21,51 @@ public class Person {
         this.age = age;
     }
 
-    //包含一个带参的构造器和一个不带参的构造器
-    public Person(String name, int age) {
-        super();
-        this.name = name;
-        this.age = age;
+    public boolean isSex() {
+        return sex;
     }
 
+    public void setSex(boolean sex) {
+        this.sex = sex;
+    }
+
+    public void sayName() {
+        System.out.println(name);
+    }
+
+    public void sayAge() {
+        System.out.println(age);
+    }
+
+    public void saySex() {
+        System.out.println(sex);
+    }
+
+
+    /*
+            以下是构造器
+             */
     public Person() {
         super();
     }
 
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public Person(boolean sex) {
+        this.sex = sex;
+    }
+
+    public Person(int age) {
+        this.age = age;
+    }
+
+
+    public Person(String name, int age, boolean sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
 }
 
