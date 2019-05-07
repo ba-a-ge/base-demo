@@ -1,12 +1,13 @@
 package com.example.firstdemo.reflect;
 
+import com.example.firstdemo.bean.Person;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import static org.junit.Assert.*;
+
 
 public class PersonTest {
 
@@ -81,8 +82,8 @@ public class PersonTest {
         Class<? extends Person> aClass = new Person().getClass();
 
         try {
-            Class<?> aClass1 = Class.forName("com.example.firstdemo.reflect.Person");
-        } catch (ClassNotFoundException e) {
+            Class<?> aClass1 = Class.forName("com.example.firstdemo.bean.Person");
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

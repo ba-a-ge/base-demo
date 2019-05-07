@@ -1,8 +1,7 @@
-package com.example.firstdemo.function;
+package com.example.firstdemo.technology.annotation;
 
-import com.example.firstdemo.annotation.MyAnnotation;
 
-public class UserUtils {
+public class AnnotationUtils {
 
     @MyAnnotation(name = "user", age = 10)
     public static void add(String name, int age) {

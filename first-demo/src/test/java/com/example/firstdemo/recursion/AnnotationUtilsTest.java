@@ -1,12 +1,9 @@
-package com.example.firstdemo.function;
+package com.example.firstdemo.recursion;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 
-
-public class UserUtilsTest {
+public class AnnotationUtilsTest {
 
     @Test
     public void test1() {

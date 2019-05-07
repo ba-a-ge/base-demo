@@ -1,4 +1,4 @@
-package com.example.firstdemo.pojo;
+package com.example.firstdemo.bean;
 
 public class User {
 

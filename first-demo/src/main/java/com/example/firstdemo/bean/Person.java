@@ -1,4 +1,4 @@
-package com.example.firstdemo.reflect;
+package com.example.firstdemo.bean;
 
 public class Person {
     String name;
