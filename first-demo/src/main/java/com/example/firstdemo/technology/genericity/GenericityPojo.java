@@ -33,7 +33,7 @@ public class GenericityPojo<T> {
 
 
     /**
-     * 泛型的通配符上限，只能使用 number 或其字类作为入参。
+     * 泛型的通配符上限，只能使用 number 或其子类作为入参。
      *
      * @param list
      */
@@ -48,7 +48,7 @@ public class GenericityPojo<T> {
 
 
     /**
-     * 泛型的通配符下限，只能使用 number 或其字类作为入参。
+     * 泛型的通配符下限，只能使用 number 或其父类作为入参。
      * @param list
      */
     public void showSuper(List<? super T> list) {
@@ -59,5 +59,6 @@ public class GenericityPojo<T> {
 
     }
 
+    
 
 }
