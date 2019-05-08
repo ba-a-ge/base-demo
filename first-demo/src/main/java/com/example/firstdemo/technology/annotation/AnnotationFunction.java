@@ -1,7 +1,10 @@
 package com.example.firstdemo.technology.annotation;
 
 
-public class AnnotationUtils {
+/**
+ * 注解使用工具
+ */
+public class AnnotationFunction {
 
     @MyAnnotation(name = "user", age = 10)
     public static void add(String name, int age) {
