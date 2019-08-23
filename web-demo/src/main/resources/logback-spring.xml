@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <contextName>printAtm</contextName>
+
+
+    <!-- 声明变量 -->
+<!--    <substitutionProperty name="appName" value="/home/logs"/>-->
+    <substitutionProperty name="appName" value="log/"/>
+
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yy-MM-dd HH:mm:ss} %-5level [%logger] : %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="EVERYDAY"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名 %i:起始是0，当第一个文件的大小超过10MB时，变为1，依次类推-->
+            <FileNamePattern>${appName}/hrAtm/%d{yyyy-MM-dd}_%i.log
+            </FileNamePattern>
+            <!--日志文件保留天数 -->
+            <MaxHistory>7</MaxHistory>
+            <!-- 按时间回滚的同时，按文件大小来回滚 -->
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>/
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} -
+                %msg%n
+            </pattern>
+        </encoder>
+        <!--日志文件最大的大小 -->
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="EVERYDAY"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+
+</configuration>
