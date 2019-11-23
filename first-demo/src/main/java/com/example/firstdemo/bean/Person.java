@@ -1,6 +1,7 @@
 package com.example.firstdemo.bean;
 
 public class Person {
+    //萨阿丹给
     String name;
     private int age;
     public boolean sex;
