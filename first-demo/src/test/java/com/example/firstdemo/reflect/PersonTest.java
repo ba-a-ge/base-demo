@@ -8,7 +8,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 
-
 public class PersonTest {
 
     Class<? extends Person> aClass = null;

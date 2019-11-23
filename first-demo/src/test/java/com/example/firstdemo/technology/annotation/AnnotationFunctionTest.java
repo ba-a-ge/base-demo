@@ -22,7 +22,7 @@ public class AnnotationFunctionTest {
 
         AnnotationFunction annotationFunction = aClass.newInstance();
 
-        add.invoke(annotationFunction,name,age);
+        add.invoke(annotationFunction, name, age);
 
 
     }

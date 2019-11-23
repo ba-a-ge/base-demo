@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.8.RELEASE</version>
+        <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -20,6 +20,10 @@
 
     <modules>
         <module>first-demo</module>
+        <module>quartz-demo</module>
+        <module>test-demo</module>
+        <module>web-demo</module>
+        <module>rancher-test-empty-demo</module>
     </modules>
 
 

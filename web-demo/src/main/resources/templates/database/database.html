@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>数据库密码加密</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" th:href="@{/admin/css/font.css}">
+    <link rel="stylesheet" th:href="@{/admin/css/xadmin.css}">
+    <script type="text/javascript" th:src="@{/admin/lib/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/admin/js/xadmin.js}"></script>
+    <script th:src="@{/admin/js/jquery-1.7.1.min.js}"></script>
+
+    <script>
+        $(function () {
+
+            $("#submit").click(submit);
+
+        });
+
+        function submit() {
+            var url = "/client/doEncrypt";
+            var code = $("#code").val();
+            var password = $("#password").val();
+            var ip = $("#ip").val();
+            var tableName = $("#tableName").val();
+
+            if (code === "" || password === "" || ip === "" || tableName === "") {
+                alert("请填写所有内容！")
+                return false;
+            }
+
+
+            $.ajax({
+                type: "post",
+                url: url,
+                data: {
+                    code: code,
+                    ip: ip,
+                    tableName: tableName,
+                    password: password
+                },
+                dataType: "json",
+                success: function (data) {
+                    if (data) {
+                        alert("数据库连接成功，已存储数据库用户名密码对应密文。");
+                    }else {
+                        alert("数据库连接失败，请确认录入数据后重试。");
+                    }
+                }
+            });
+
+
+        }
+
+    </script>
+
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row" style="font-size: 25px">
+
+        <table>
+
+            <tr>
+                <td><span class="x-red">*</span>数据库ip:</td>
+                <td><input type="text" id="ip" name="username" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input" style="width: 300px;height: 50px;font-size: 25px">
+
+                </td>
+                <td style="color: grey">示例：192.168.1.1</td>
+            </tr>
+            <tr>
+                <td><span class="x-red">*</span>表名:
+                </td>
+                <td><input type="text" id="tableName" name="username" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input" style="width: 300px;height: 50px;font-size: 25px">
+                </td>
+            </tr>
+            <tr>
+                <td><span class="x-red">*</span>账号:</td>
+                <td><input type="text" id="code" name="username" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input" style="width: 300px;height: 50px;font-size: 25px">
+                </td>
+            </tr>
+            <tr>
+                <td><span class="x-red">*</span>密码:
+                </td>
+                <td><input type="password" id="password" name="username" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input" style="width: 300px;height: 50px;font-size: 25px">
+                </td>
+            </tr>
+        </table>
+
+
+        <button id="submit">连接测试</button>
+    </div>
+</div>
+</body>
+</html>
