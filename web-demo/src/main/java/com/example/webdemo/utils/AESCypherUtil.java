@@ -19,9 +19,6 @@ import java.security.spec.KeySpec;
 @Component
 public class AESCypherUtil {
 
-    @Value("${secretKey}")
-    String key;
-
     private static String salt = "ssshhhhhhhhhhh!!!!";
 
     /**
