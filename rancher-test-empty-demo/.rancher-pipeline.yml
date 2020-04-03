@@ -1,0 +1,16 @@
+stages:
+- name: Build Jar
+  steps:
+  - runScriptConfig:
+      image: maven:jdk8
+      shellScript: gradle clean build
+- name: push image
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: rancher-test:1.0.0
+      pushRemote: true
+      registry: tomwu.dev:5000
+timeout: 60
+notification: {}
