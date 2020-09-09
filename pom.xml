@@ -19,11 +19,7 @@
 
 
     <modules>
-        <module>first-demo</module>
-        <module>quartz-demo</module>
-        <module>test-demo</module>
-        <module>web-demo</module>
-        <module>rancher-test-empty-demo</module>
+        <module>web</module>
     </modules>
 
 
